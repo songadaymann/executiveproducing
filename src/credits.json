@@ -1,0 +1,525 @@
+{
+  "cy": {
+    "name": "C.Y. Lee",
+    "base": "Seattle",
+    "image": "images/cy-lee.webp",
+    "imageAlt": "C.Y. Lee holding up an ice cream cone on a sidewalk",
+    "description": "C.Y. Lee is a Seattle music nerd and patron who executive-produces the work of independent musicians, filmmakers, dancers, and photographers.",
+    "lede": "A Seattle music nerd who pays for the work <strong>before it exists</strong>: albums, short films, tours, residencies, podcasts, and books by independent artists.",
+    "notes": [
+      "Growing up, C.Y. Lee was surrounded by music. His father was a concert pianist from Hong Kong, his mother a music scholar, and his sister became a professional violinist; he played piano and cello. Then he chose technology. At MIT, college radio and DJing in the late ’80s pulled him into house and hip-hop.",
+      "He wrote software at Apple, worked on what became Outlook at Microsoft, and joined RealNetworks in 1999, just as Napster was turning the record business upside down. How music moves from artists to listeners, and how money moves back, has occupied him ever since.",
+      "In 2013 he and Carl Tydingco, a fellow RealNetworks alum, started Music Nerd. These days C.Y. is a patron in the old sense with a title from the movies: he funds the album, the film, the tour, or the book before it exists, and takes the credit of executive producer. He and Carl now work with around thirty artists.",
+      "His pitch to people who made their money outside the arts: treat backing an artist like a luxury good worth buying. The return is cultural, the reward is the credit, and the artist gets to make the thing."
+    ],
+    "facts": [
+      [
+        "Based in",
+        "Seattle"
+      ],
+      [
+        "Studied",
+        "MIT"
+      ],
+      [
+        "Built software at",
+        "Apple, Microsoft, RealNetworks"
+      ],
+      [
+        "Co-founded",
+        "Music Nerd (2013), with Carl Tydingco"
+      ],
+      [
+        "Off the clock",
+        "Coffee, cheap old cars, and the Nürburgring"
+      ]
+    ],
+    "quote": {
+      "text": "Scaling intent beyond what I can do myself.",
+      "cite": "C.Y. on what patronage means, to Sound of Fractures"
+    },
+    "links": {
+      "Instagram": "https://www.instagram.com/cxy/",
+      "X": "https://x.com/cxy",
+      "Substack": "https://cxylee.substack.com",
+      "LinkedIn": "https://www.linkedin.com/in/cxylee/",
+      "Music Nerd": "https://musicnerd.net"
+    }
+  },
+  "creditsIntro": "The artists C.Y. backs, and the work his money helped make: albums, short films, a tour, a residency, a podcast, a music player, a photo book. Open any credit for the story and the music.",
+  "credits": [
+    {
+      "slug": "latasha",
+      "name": "LATASHÁ",
+      "role": "Executive Producer",
+      "work": "TASH55 · In Process",
+      "discipline": "Rapper, singer, world-builder",
+      "base": "Los Angeles, by way of Brooklyn",
+      "bio": "LATASHÁ is a Brooklyn-raised, Los Angeles-based rapper and singer whose songs move between boom-bap, club music, jazz, and Afro-diasporic sound. She runs the creative company TOPIA, home to her TASH55 universe, and in September 2026 she released OUT HERE, a nine-track concept album about remaking yourself and her first full-length since 2017.",
+      "backed": "Put $100,000 behind TASH55, and funds In Process, the platform she created for artists to document their work as it happens. Its team list credits him as executive producer.",
+      "source": "https://www.decential.io/articles/the-modern-gala-how-latasha-and-cy-lee-are-meming-patronage-into-existence",
+      "links": {
+        "Website": "https://www.callmelatasha.com",
+        "Instagram": "https://www.instagram.com/callmelatasha",
+        "Bandcamp": "https://callmelatasha.bandcamp.com/",
+        "Spotify": "https://open.spotify.com/artist/2lW1SPnxy7JqGV84TcSINi",
+        "In Process": "https://inprocess.art"
+      },
+      "embed": {
+        "type": "bandcamp",
+        "id": "album=3825695683",
+        "title": "OUT HERE, by LATASHÁ"
+      },
+      "image": "artists/latasha.webp",
+      "imageAlt": "LATASHÁ’s artist image: a silver figure crouching"
+    },
+    {
+      "slug": "rae-isla",
+      "name": "Rae Isla",
+      "role": "Executive Producer",
+      "work": "Music, video, and live shows",
+      "discipline": "Singer-songwriter",
+      "base": "Los Angeles, from Bainbridge Island, WA",
+      "bio": "Rae Isla grew up on Bainbridge Island playing classical cello, went to Berklee on a vocal scholarship, and now writes folk, indie rock, and alt-country in Los Angeles. She calls herself a modern-day traveling bard. Her albums are Another Life (2021) and New Frontier (2024), recorded in Mexico City, and she sang the title song for the film Ezra.",
+      "backed": "Has been her executive producer for about three years, across her records, videos, and live shows. He’s also on the supporter list for New Frontier.",
+      "source": "https://raeisla.bandcamp.com/album/new-frontier",
+      "links": {
+        "Website": "https://raeisla.com/",
+        "Instagram": "https://www.instagram.com/raeisla/",
+        "Bandcamp": "https://raeisla.bandcamp.com/",
+        "Spotify": "https://open.spotify.com/artist/7dfrA1fYW7chYdftUxLnk5"
+      },
+      "embed": {
+        "type": "bandcamp",
+        "id": "album=1121801099",
+        "title": "New Frontier, by Rae Isla"
+      },
+      "image": "artists/rae-isla.webp",
+      "imageAlt": "Rae Isla in a cowboy hat against a blue wall"
+    },
+    {
+      "slug": "sound-of-fractures",
+      "name": "Sound of Fractures",
+      "role": "Executive Producer",
+      "work": "Detroit EP · Alone Together",
+      "discipline": "Electronic producer",
+      "base": "London",
+      "bio": "Sound of Fractures is London producer Jamie Reddington, who builds garage, breaks, and soul into cinematic tracks out of everyday recordings; one single opens on his daughter’s heartbeat. His album SCENES asked listeners to send memories tied to each song, and his Alone Together series turns a live show into a room where strangers actually meet.",
+      "backed": "A patron for several years. He executive-produced the Detroit EP (2025), made from voice notes during a Detroit residency, and was executive producer and grant-giver for Alone Together’s London events in 2026.",
+      "source": "https://sofractures.bandcamp.com/album/detroit",
+      "links": {
+        "Website": "https://www.soundoffractures.com",
+        "Instagram": "https://www.instagram.com/sofractures/",
+        "Bandcamp": "https://sofractures.bandcamp.com",
+        "Spotify": "https://open.spotify.com/artist/4syKpCOJEOnegH5QmuGnKk",
+        "Substack": "https://soundoffractures.substack.com"
+      },
+      "embed": {
+        "type": "bandcamp",
+        "id": "album=2245359439",
+        "title": "Detroit, by Sound of Fractures"
+      },
+      "image": "artists/sound-of-fractures.webp",
+      "imageAlt": "Sound of Fractures against a red background"
+    },
+    {
+      "slug": "iman-europe",
+      "name": "Iman Europe",
+      "role": "Executive Producer",
+      "work": "ego death, a short film",
+      "discipline": "Singer, rapper, writer, director",
+      "base": "Los Angeles",
+      "bio": "Iman Europe is an independent Los Angeles artist and writer who mixes R&B, soul, hip-hop, jazz, and electronic music. Songs from her album Nami landed on HBO’s Insecure and Netflix’s Nappily Ever After. Chrysalis (2025), made with producer Kaelin Ellis, is the middle chapter of a trilogy, and its song “ego death” became a short film she co-directed with Elyse Thoms.",
+      "backed": "Executive-produced the “ego death” short film and song (July 2026), which passed a million views in two days.",
+      "source": "https://beattrotterz.com/2026/07/24/iman-europe-ego-death-the-official-short-film/",
+      "links": {
+        "Instagram": "https://www.instagram.com/imaneurope/",
+        "YouTube": "https://www.youtube.com/@ImanEurope",
+        "Bandcamp": "https://imaneurope.bandcamp.com/",
+        "Spotify": "https://open.spotify.com/artist/6adkmtXg0Qlmahg9SxNVl0",
+        "Substack": "https://imaneurope.substack.com"
+      },
+      "embed": {
+        "type": "youtube",
+        "id": "0YzH2ePR07o",
+        "title": "EGO DEATH (The Official Short Film)"
+      },
+      "image": "artists/iman-europe.webp",
+      "imageAlt": "Iman Europe with long braids in blue light"
+    },
+    {
+      "slug": "tk-the-legend",
+      "name": "TK the Legend",
+      "role": "Executive Producer",
+      "work": "Villain Origin Stories",
+      "discipline": "Producer, songwriter, director",
+      "base": "Los Angeles",
+      "bio": "TK (Michael Akinlosotu) is a producer, songwriter, and engineer with writing and co-production credits on Ye’s 2026 album Bully. His own work lives inside DARKSIDE, a music, film, and performance universe that includes his PERFECT EP and Villain Origin Stories, a long-form interview show he hosts, directs, edits, and scores.",
+      "backed": "Executive-produces Villain Origin Stories, and sat in the guest chair himself for episode 3.",
+      "source": "https://podcasts.apple.com/us/podcast/villain-origin-stories-musical-upbringing-mit-big-tech/id6797775654?i=1000785304198",
+      "links": {
+        "DARKSIDE": "https://www.darkside.love",
+        "Villain Origin Stories": "https://www.villainoriginstories.com",
+        "Instagram": "https://www.instagram.com/tkthelegend",
+        "YouTube": "https://www.youtube.com/@TKtheLegendx"
+      },
+      "embed": {
+        "type": "spotify",
+        "id": "album/3f9d7aEVptwEYjwuF0wFI1",
+        "title": "PERFECT, by TK"
+      },
+      "image": "artists/tk-the-legend.webp",
+      "imageAlt": "DARKSIDE cover art: a figure in a long coat under a black sun"
+    },
+    {
+      "slug": "ahmed-sirour",
+      "name": "Ahmed Sirour",
+      "role": "Executive Producer",
+      "work": "A.S. I Am, Part Two",
+      "discipline": "Keyboardist, composer, producer",
+      "base": "Brooklyn",
+      "bio": "Ahmed Sirour is a Brooklyn keyboardist, composer, and producer who taught himself piano by ear in his twenties and later earned a master’s in audio production in London. His records run through soul, jazz, house, and Brazilian grooves, and he produces, mixes, and masters all of it himself.",
+      "backed": "Executive-produced A.S. I Am, Part Two: a 30-track audio memoir of Ahmed’s life from 2002 to 2013, told as interviews over an original score and released in three sets at Bandcamp listening parties in October 2026.",
+      "source": "https://ahmedsirour.bandcamp.com/album/a-s-i-am-the-audio-biography-of-ahmed-sirour-part-two-set-1-of-3",
+      "links": {
+        "Website": "https://ahmedsirour.com",
+        "Instagram": "https://www.instagram.com/ahmedsirour/",
+        "Bandcamp": "https://ahmedsirour.bandcamp.com"
+      },
+      "embed": {
+        "type": "bandcamp",
+        "id": "album=1517316999",
+        "title": "A.S. I Am, Part Two (Set 1 of 3), by Ahmed Sirour"
+      },
+      "image": "artists/ahmed-sirour.webp",
+      "imageAlt": "Cover of A.S. I Am, Part Two: a collage of photos of Ahmed inside a silhouette"
+    },
+    {
+      "slug": "maceagon-voyce",
+      "name": "MacEagon Voyce",
+      "role": "Executive Producer",
+      "work": "Braneworld · Guided by Voyces",
+      "discipline": "Writer, musician",
+      "base": "London",
+      "bio": "MacEagon Voyce is a London writer and musician building Braneworld, a world that unfolds across a music release, a novel, a conversation series, and a live-performance framework called Meridians. He writes Guided by Voyces, a newsletter about music and the art of becoming, and his patrons get written into the story as characters.",
+      "backed": "One of two executive producers of Guided by Voyces and Braneworld, alongside the Kernel community. He has his own character in the story.",
+      "source": "https://guidedbyvoyces.substack.com/p/executive-producers",
+      "links": {
+        "Guided by Voyces": "https://guidedbyvoyces.substack.com"
+      },
+      "embed": null,
+      "image": "artists/maceagon-voyce.webp",
+      "imageAlt": "Black-and-white portrait of MacEagon Voyce"
+    },
+    {
+      "slug": "tom-vek",
+      "name": "Tom Vek",
+      "role": "Executive Producer",
+      "work": "Sleevenote, with Chris Hipgrave",
+      "discipline": "Musician, designer",
+      "base": "London",
+      "bio": "Tom Vek made his debut album We Have Sound (2005) mostly alone in his parents’ garage, then followed it with Leisure Seizure, Luck, and New Symbols. He’s also a graphic designer. With engineer Chris Hipgrave he built Sleevenote, a square, artwork-first player for music you actually own, whose first 100 units sold out in 2026.",
+      "backed": "Executive producer of Sleevenote. Tom also showed it at the open studio C.Y. and Carl hosted at FWB Fest in August 2026.",
+      "source": "https://www.instagram.com/fwb.help/p/DbW-K01mxyk/",
+      "links": {
+        "Website": "https://www.tomvek.com",
+        "Sleevenote": "https://sleevenote.com/",
+        "Instagram": "https://www.instagram.com/tom_vek/",
+        "Bandcamp": "https://tomvek.bandcamp.com/"
+      },
+      "embed": {
+        "type": "spotify",
+        "id": "track/2040zzMYZ6Pm7Gnsy4vPrb",
+        "title": "Hold On To Your Love, by Tom Vek"
+      },
+      "image": "artists/tom-vek.webp",
+      "imageAlt": "Tom Vek in a yellow jacket, hands on his head"
+    },
+    {
+      "slug": "duo-do",
+      "name": "Dúo Dø",
+      "role": "Lead Executive Producer",
+      "work": "Japan Tour 2026",
+      "discipline": "Duo",
+      "base": "Buenos Aires",
+      "bio": "Dúo Dø is singer and percussionist Clementine Esquivel and guitarist Santiago Reos, who have been making genre-free R&B, neo-soul, jazz, and hip-hop in Buenos Aires since 2015. They produce their own records, have released more than thirty of them, and have a long love affair with Japan: their first tour there, in 2023, took them through Tokyo, Osaka, Kyoto, and Kobe.",
+      "backed": "Lead executive producer of the 2026 Japan tour, and he matches every new contribution from their community dollar for dollar.",
+      "source": "https://www.instagram.com/duodomusica/p/Deqf3QoEZA0/",
+      "links": {
+        "Instagram": "https://www.instagram.com/duodomusica/",
+        "Bandcamp": "https://duodomusica.bandcamp.com",
+        "Spotify": "https://open.spotify.com/artist/37pRFqq0GsFPs2oQc3Cvgh",
+        "YouTube": "https://www.youtube.com/@duodomusica"
+      },
+      "embed": {
+        "type": "youtube",
+        "id": "3PXDarRMPvw",
+        "title": "Live in Kyoto, Japan Tour 2023 (full show)"
+      },
+      "image": "artists/duo-do.webp",
+      "imageAlt": "Clementine Esquivel and Santiago Reos of Dúo Dø"
+    },
+    {
+      "slug": "amerge",
+      "name": "Amerge",
+      "role": "Executive Producer",
+      "work": "The 2026 Amerge Residency",
+      "discipline": "Artist-owned music co-op",
+      "base": "Los Angeles",
+      "bio": "Amerge is an artist-owned cooperative of songwriters, producers, and music supervisors building a fairer way to license songs for film, TV, and ads. Founded by musician Levi Downey, with members in Los Angeles, New York, Virginia, and Ottawa, it runs songwriting camps, sessions, and workshops where independent musicians write and record together.",
+      "backed": "One of the executive producers who made its week-long 2026 residency possible.",
+      "source": "https://www.instagram.com/amergemusic/p/Dc6vKzzgRWc/",
+      "links": {
+        "Website": "https://www.amerge.xyz/",
+        "Instagram": "https://www.instagram.com/amergemusic/"
+      },
+      "embed": null,
+      "image": "artists/amerge.webp",
+      "imageAlt": "The Amerge logo in black on yellow"
+    },
+    {
+      "slug": "bboy-wicket",
+      "name": "Bboy Wicket",
+      "role": "Special Thanks",
+      "work": "WICKET, a documentary",
+      "discipline": "B-boy, choreographer, teacher",
+      "base": "Austin, from San Francisco",
+      "bio": "Gabriel “Wicket” Jaochico started breaking in San Francisco in 1991, joined the Renegade Rockers, and became famous for power moves fused with East Coast footwork. He has choreographed for Usher, Will Smith, and Christina Aguilera, and now teaches breaking at Texas State. WICKET, directed by Lily Plotkin, follows his life in dance and his decision to come out at 41; it won Frameline’s Audience Award for Best Documentary.",
+      "backed": "Thanked by Wicket for his support as the film toured festivals in 2026.",
+      "source": "https://www.instagram.com/bboywicket/p/Db8Qd2vka-A/",
+      "links": {
+        "Instagram": "https://www.instagram.com/bboywicket/",
+        "The film": "https://www.frameline.org/films/frameline49/wicket"
+      },
+      "embed": null,
+      "image": "artists/bboy-wicket.webp",
+      "imageAlt": "Bboy Wicket in a cap, arms crossed, in a studio"
+    },
+    {
+      "slug": "trevor-m-banta",
+      "name": "Trevor M. Banta",
+      "role": "Special Thanks",
+      "work": "Skate Or Die, a photo book",
+      "discipline": "Photographer",
+      "base": null,
+      "bio": "Trevor M. Banta spent three months driving 12,000 miles across the United States on film, photographing skateparks and cemeteries, then carried the series through seven European countries. The places tie back to his own life as well as new ones, and the work became a meditation on mortality. He is now writing Skate Or Die, his first book.",
+      "backed": "Thanked, along with Fridays at the Park, for backing the trip and the book, due fall 2026.",
+      "source": "https://www.instagram.com/errorgardener/p/DYqjph1mLbg/",
+      "links": {
+        "Instagram": "https://www.instagram.com/errorgardener/"
+      },
+      "embed": null,
+      "image": null
+    },
+    {
+      "slug": "fridays-at-the-park",
+      "name": "Fridays at The Park",
+      "role": "Patron",
+      "work": "A new song every Friday",
+      "discipline": "Recording collective and nonprofit",
+      "base": "Los Angeles",
+      "bio": "Fridays at The Park is a circle of musician friends who write, record, mix, master, and release a new song every Friday, with a rotating cast that has included guitarist and skater Ray Barbee. They’ve put out three seasons of those songs as The Park. As a nonprofit it also fiscally sponsors other artists, so gifts to them are tax-deductible.",
+      "backed": null,
+      "source": null,
+      "links": {
+        "Website": "https://thepark.wtf/",
+        "Instagram": "https://www.instagram.com/fridaysatthepark/"
+      },
+      "embed": {
+        "type": "spotify",
+        "id": "album/7rxVRh6B4yhj0qKO2tqGal",
+        "title": "Fridays at The Park, Season 1"
+      },
+      "image": "artists/fridays-at-the-park.webp",
+      "imageAlt": "Season 1 cover: a contact sheet of black-and-white photos"
+    },
+    {
+      "slug": "house-of-paper",
+      "name": "House of Paper",
+      "role": "Patron",
+      "work": "Music for meaning over metrics",
+      "discipline": "Artist-funding project",
+      "base": "Seattle",
+      "bio": "House of Paper is a quiet effort to free artists from making decisions for the algorithm, and to ground creative work in trust, vision, and context instead. It funds music that resists metrics, and it’s building a network of artists running musical experiments meant to move culture. It’s a fiscally sponsored project of Seattle’s Allied Arts Foundation.",
+      "backed": null,
+      "source": null,
+      "links": {
+        "Allied Arts Foundation": "https://www.alliedartsfoundation.org/fiscal-sponsored-projects-2025/blog-post-title-one-kr46w-yd73h-5hc4w-cfpny-ht75a-lzmkw-wspcf-p3nd5-hj2xm-c2pw7-nlmfr-62yly-rnc5a-mkm52-scc4n-75s72-pj27a-85g4p"
+      },
+      "embed": null,
+      "image": "artists/house-of-paper.webp",
+      "imageAlt": "House of Paper graphic"
+    },
+    {
+      "slug": "yuri-beats",
+      "name": "Yuri Beats",
+      "role": "Patron",
+      "work": null,
+      "discipline": "Hip-hop producer, pianist",
+      "base": "Philadelphia",
+      "bio": "Yuri Beats is a hip-hop producer and pianist best known for co-producing Lil Dicky’s double-platinum “Molly” with Streetrunner. He produced YC the Cynic’s EP Good Morning, Midnight, made the instrumental album Future Movements for Earth People, and released One Day It May Matter with Darko the Super in 2022.",
+      "backed": null,
+      "source": null,
+      "links": {
+        "Spotify": "https://open.spotify.com/artist/0eWnyV4cR5qfS6xWtmgrA5",
+        "Apple Music": "https://music.apple.com/us/artist/yuri-beats/568246988"
+      },
+      "embed": {
+        "type": "spotify",
+        "id": "artist/0eWnyV4cR5qfS6xWtmgrA5",
+        "title": "Yuri Beats on Spotify"
+      },
+      "image": "artists/yuri-beats.webp",
+      "imageAlt": "Cover of Future Movements for Earth People: an astronaut in a white corridor"
+    },
+    {
+      "slug": "la-equis",
+      "name": "LA EQUIS",
+      "role": "Featuring",
+      "work": "El Niño Maravilla",
+      "discipline": "Reggaeton artist, producer",
+      "base": "From Caguas, Puerto Rico",
+      "bio": "For years he recorded as Xcelencia, blending reggaeton with electronic music, hip-hop, and Latin pop and running his career like a product studio, down to building his own tools for fans. His 2016 album Enigma won an Independent Music Award. As LA EQUIS he released El Niño Maravilla in February 2026, with an interactive world of its own at maravilla.city.",
+      "backed": "One of the roughly thirty artists C.Y. and Carl Tydingco work with through Music Nerd.",
+      "source": "https://musicnerds.substack.com/p/music-nerd-platform-update-cb9",
+      "links": {
+        "El Niño Maravilla": "https://maravilla.city",
+        "Instagram": "https://www.instagram.com/xcelencia/",
+        "Spotify": "https://open.spotify.com/artist/7c34Wg8HcWO9BWhHLwiXsr",
+        "YouTube": "https://www.youtube.com/@xcelencia"
+      },
+      "embed": {
+        "type": "youtube",
+        "id": "-0Lz5xoOWkY",
+        "title": "CHAMAKITO, by LA EQUIS (official video)"
+      },
+      "image": "artists/la-equis.webp",
+      "imageAlt": "Illustrated portrait of LA EQUIS in white sunglasses"
+    },
+    {
+      "slug": "vivid-fever-dreams",
+      "name": "Vivid Fever Dreams",
+      "role": "Featuring",
+      "work": "Dream Sequence",
+      "discipline": "Producer, DJ, saxophonist",
+      "base": null,
+      "bio": "Vivid Fever Dreams makes alternative electronic music that pairs indie-pop melody with bass music and dubstep, working as a producer, DJ, and saxophonist. The project in the works with C.Y. and Carl is called Dream Sequence.",
+      "backed": "One of the roughly thirty artists C.Y. and Carl Tydingco work with through Music Nerd.",
+      "source": "https://musicnerds.substack.com/p/music-nerd-platform-update-cb9",
+      "links": {
+        "Website": "https://vividfeverdreams.xyz",
+        "Instagram": "https://www.instagram.com/vividfeverdreams/",
+        "Spotify": "https://open.spotify.com/artist/3dHXdkbMefKGG2ydXFMCHW",
+        "YouTube": "https://www.youtube.com/@vividfeverdreams"
+      },
+      "embed": {
+        "type": "spotify",
+        "id": "artist/3dHXdkbMefKGG2ydXFMCHW",
+        "title": "Vivid Fever Dreams on Spotify"
+      },
+      "image": "artists/vivid-fever-dreams.webp",
+      "imageAlt": "Vivid Fever Dreams DJing"
+    },
+    {
+      "slug": "black-dave",
+      "name": "Black Dave",
+      "role": "Featuring",
+      "work": null,
+      "discipline": "Rapper, producer, DJ",
+      "base": "Charleston, SC",
+      "bio": "Black Dave (Dave Curry) grew up in Charleston playing bass in punk and hardcore bands before he started producing and rapping. His music runs trap, nu-metal, and punk through anime, sneaker, and streetwear culture. In 2025, as Black Dave MK2, he made an album in 45 days whose title is an entire anime premise about piloting a Gundam.",
+      "backed": "One of the roughly thirty artists C.Y. and Carl Tydingco work with through Music Nerd. C.Y. is also on the supporter list for that album.",
+      "source": "https://blackdavemk2.bandcamp.com/album/that-time-i-found-an-abandoned-mech-and-it-turned-out-to-be-a-gundam-and-i-became-the-greatest-pilot-in-the-universe",
+      "links": {
+        "Website": "https://blackdave.xyz/",
+        "Instagram": "https://www.instagram.com/blackdave.xyz/",
+        "Bandcamp": "https://blackdavemk2.bandcamp.com/album/that-time-i-found-an-abandoned-mech-and-it-turned-out-to-be-a-gundam-and-i-became-the-greatest-pilot-in-the-universe"
+      },
+      "embed": {
+        "type": "spotify",
+        "id": "album/4iCmwoPnfsf4kNyiguAIoc",
+        "title": "Black Dave MK2’s 2025 album"
+      },
+      "image": "artists/black-dave.webp",
+      "imageAlt": "Album cover: a figure standing before a giant robot in blue light"
+    },
+    {
+      "slug": "forrest-mortifee",
+      "name": "Forrest Mortifee",
+      "role": "Featuring",
+      "work": "The Ascension Service",
+      "discipline": "Musician",
+      "base": null,
+      "bio": "Forrest Mortifee leads The Ascension Service, a secular musical congregation that began in 2025: gatherings built around singing together, love, and the person you’re becoming.",
+      "backed": "One of the roughly thirty artists C.Y. and Carl Tydingco work with through Music Nerd.",
+      "source": "https://musicnerds.substack.com/p/music-nerd-platform-update-cb9",
+      "links": {
+        "The Ascension Service": "https://www.ascensionservice.org",
+        "Instagram": "https://www.instagram.com/forrestmortifee/"
+      },
+      "embed": null,
+      "image": null
+    },
+    {
+      "slug": "pete-rango",
+      "name": "Pete Rango",
+      "role": "Featuring",
+      "work": "Music Nerd",
+      "discipline": "Producer, engineer",
+      "base": "Richmond, VA",
+      "bio": "Pete Rango (Peter Arango) was born in Bogotá, grew up between Virginia and Florida, and came up through hardcore bands before turning to hip-hop production and engineering. His co-write “Vi$ions” with Cherele was placed on HBO’s Insecure, and he founded the label XUE Records. These days he builds research tools and the website for Music Nerd.",
+      "backed": "Part of the Music Nerd team, building it with C.Y. and Carl.",
+      "source": "https://musicnerd.net/about",
+      "links": {
+        "Website": "https://peterango.com/",
+        "Instagram": "https://www.instagram.com/p3t3rango/",
+        "Apple Music": "https://music.apple.com/us/artist/pete-rango/1513734272"
+      },
+      "embed": {
+        "type": "youtube",
+        "id": "Vp4MXvyrDv4",
+        "title": "Breakdown, by Elle Symone & Pete Rango"
+      },
+      "image": "artists/pete-rango.webp",
+      "imageAlt": "RUSH cover art: a running black figure"
+    },
+    {
+      "slug": "song-a-day",
+      "name": "Jonathan Mann",
+      "role": "Featuring",
+      "work": "We All Make A Platformer",
+      "discipline": "Songwriter, game maker",
+      "base": null,
+      "bio": "Jonathan Mann has written and recorded a song every day since January 1, 2009, which earned him a Guinness World Record. He also makes games, including WAMP (We All Make A Platformer), where everyone builds a room and then plays everyone else’s. He made this website.",
+      "backed": "One of the roughly thirty artists C.Y. and Carl work with through Music Nerd. C.Y. is also a friend and mentor.",
+      "source": "https://musicnerds.substack.com/p/music-nerd-platform-update-cb9",
+      "links": {
+        "Song A Day": "https://songaday.studio",
+        "WAMP": "https://wamp.land/"
+      },
+      "embed": null,
+      "image": null
+    }
+  ],
+  "interviews": [
+    {
+      "title": "Villain Origin Stories, with TK",
+      "url": "https://podcasts.apple.com/us/podcast/villain-origin-stories-musical-upbringing-mit-big-tech/id6797775654?i=1000785304198",
+      "youtube": "Wr1kpz4_Hmw",
+      "description": "A clip from C.Y.’s episode: building Outlook, the Napster years, and what music is worth. The full conversation is on Apple Podcasts."
+    },
+    {
+      "title": "New Forms 001: An interview with patron C.Y. Lee",
+      "url": "https://soundoffractures.substack.com/p/new-forms-001-an-interview-with-patron",
+      "youtube": "qjnyBvzHuVg",
+      "description": "Sound of Fractures sits down with C.Y. in Detroit to ask what patronage in music could look like."
+    },
+    {
+      "title": "The Modern Gala",
+      "url": "https://www.decential.io/articles/the-modern-gala-how-latasha-and-cy-lee-are-meming-patronage-into-existence",
+      "youtube": null,
+      "linkText": "Read",
+      "description": "Decential on how C.Y. and LATASHÁ are trying to make patronage a thing people want to be seen doing."
+    }
+  ]
+}

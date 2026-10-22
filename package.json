@@ -1,0 +1,13 @@
+{
+  "name": "executiveproducing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "executiveproducing.com: the credits of C.Y. Lee, patron and executive producer of independent artists.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs && npx wrangler dev",
+    "deploy": "node build.mjs && npx wrangler deploy"
+  }
+}

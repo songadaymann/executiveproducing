@@ -1,0 +1,13 @@
+{
+  "name": "executiveproducing",
+  "compatibility_date": "2026-07-01",
+  // A static site: build.mjs writes dist/, Cloudflare serves it as-is.
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "executiveproducing.com", "custom_domain": true },
+    { "pattern": "www.executiveproducing.com", "custom_domain": true }
+  ]
+}
