@@ -14,6 +14,52 @@ const revealer = new IntersectionObserver((entries) => {
 }, { rootMargin: '0px 0px -8% 0px' });
 document.querySelectorAll('.reveal').forEach((el) => revealer.observe(el));
 
+// The top bar: solid once you leave the opening titles, with a line for how far down you are
+// and the section you're in marked.
+const bar = document.querySelector('.bar');
+if (bar) {
+  const update = () => {
+    root.classList.toggle('scrolled', scrollY > innerHeight * 0.5);
+    const max = root.scrollHeight - innerHeight;
+    bar.style.setProperty('--p', max > 0 ? Math.min(scrollY / max, 1).toFixed(4) : '0');
+  };
+  addEventListener('scroll', update, { passive: true });
+  addEventListener('resize', update);
+  update();
+
+  const linkRow = bar.querySelector('.bar-links');
+  const links = [...linkRow.querySelectorAll('a')];
+  // Whatever crosses a line just above mid-screen is the current section; the titles clear it.
+  const spy = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      for (const link of links) {
+        if (link.hash !== `#${entry.target.id}`) {
+          link.removeAttribute('aria-current');
+          continue;
+        }
+        link.setAttribute('aria-current', 'location');
+        // On a phone the links scroll sideways, so keep the current one in view.
+        const offset = link.offsetLeft - (linkRow.clientWidth - link.offsetWidth) / 2;
+        linkRow.scrollTo({ left: offset, behavior: reduceMotion ? 'auto' : 'smooth' });
+      }
+    }
+  }, { rootMargin: '-45% 0px -55% 0px' });
+  for (const id of ['top', ...links.map((link) => link.hash.slice(1))]) {
+    const target = document.getElementById(id);
+    if (target) spy.observe(target);
+  }
+}
+
+// A link to a credit (the names under "The credits", or a shared URL) opens it too.
+const openFromHash = () => {
+  if (location.hash.length < 2) return;
+  const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if (target?.classList.contains('credit')) target.querySelector('details').open = true;
+};
+addEventListener('hashchange', openFromHash);
+openFromHash();
+
 // Players load only when someone opens a credit, so the page stays light.
 function embedFrame(el) {
   const { type, id, title } = el.dataset;
@@ -84,17 +130,17 @@ if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
 }
 
 // "Roll credits": scroll the page at film-credit speed until the end card or any input.
-const rollButton = document.querySelector('.roll-button');
-if (rollButton && !reduceMotion) {
+// There's a button on the title card and another in the top bar; they stay in step.
+const rollButtons = [...document.querySelectorAll('.roll-button')];
+if (rollButtons.length && !reduceMotion) {
   let rolling = false;
   let last = 0;
   let y = 0;
-  const label = rollButton.querySelector('.roll-label');
-  const stop = () => {
-    rolling = false;
-    root.classList.remove('rolling');
-    root.style.scrollBehavior = '';
-    label.textContent = 'Roll credits';
+  const set = (on) => {
+    rolling = on;
+    root.classList.toggle('rolling', on);
+    root.style.scrollBehavior = on ? 'auto' : '';
+    for (const button of rollButtons) button.querySelector('.roll-label').textContent = on ? 'Stop' : 'Roll credits';
   };
   const step = (t) => {
     if (!rolling) return;
@@ -102,23 +148,22 @@ if (rollButton && !reduceMotion) {
     last = t;
     y += dt * 0.07;
     scrollTo(0, y);
-    if (innerHeight + scrollY >= root.scrollHeight - 2) return stop();
+    if (innerHeight + scrollY >= root.scrollHeight - 2) return set(false);
     requestAnimationFrame(step);
   };
-  rollButton.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (rolling) return stop();
-    rolling = true;
-    last = 0;
-    y = scrollY;
-    root.style.scrollBehavior = 'auto';
-    root.classList.add('rolling');
-    label.textContent = 'Stop';
-    requestAnimationFrame(step);
-  });
+  for (const button of rollButtons) {
+    button.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (rolling) return set(false);
+      set(true);
+      last = 0;
+      y = scrollY;
+      requestAnimationFrame(step);
+    });
+  }
   for (const type of ['wheel', 'touchstart', 'keydown', 'pointerdown']) {
     addEventListener(type, (e) => {
-      if (rolling && !rollButton.contains(e.target)) stop();
+      if (rolling && !e.target.closest?.('.roll-button')) set(false);
     }, { passive: true });
   }
 }

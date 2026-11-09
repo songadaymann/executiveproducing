@@ -25,7 +25,7 @@ Then run `npm run build`.
 
 ## How it's built
 
-A Node script renders the JSON into one static HTML page, with a little vanilla JS for the players, the photo that follows your pointer, and the "Roll credits" button. Cloudflare Workers static assets serves it (`wrangler.jsonc`), and `npm run deploy` builds and ships it.
+A Node script renders the JSON into one static HTML page, with a little vanilla JS for the players, the top bar that tracks which section you're in, the photo that follows your pointer, and the "Roll credits" button. Cloudflare Workers static assets serves it (`wrangler.jsonc`), and `npm run deploy` builds and ships it.
 
 Photos aren't in this repo. They live in the ignored `private-assets/` folder (see [ASSETS.md](ASSETS.md)), and the build copies them in when they're present. Without them the site still builds, just without photos.
 

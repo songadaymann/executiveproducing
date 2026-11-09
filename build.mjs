@@ -39,7 +39,7 @@ async function renderCredit(c) {
     ? `<div class="embed" data-type="${esc(c.embed.type)}" data-id="${esc(c.embed.id)}" data-title="${esc(c.embed.title)}"></div>`
     : '';
   const backed = c.backed
-    ? `<p class="credit-backed"><b>C.Y.’s part:</b> ${esc(c.backed)}${c.source ? ` <a href="${esc(c.source)}" rel="noopener" target="_blank">Source</a>` : ''}</p>`
+    ? `<div class="credit-backed"><p class="label">C.Y.’s part</p><p>${esc(c.backed)}${c.source ? ` <a href="${esc(c.source)}" rel="noopener" target="_blank">Source</a>` : ''}</p></div>`
     : '';
   return `
       <li class="credit reveal" id="${esc(c.slug)}">
@@ -49,8 +49,8 @@ async function renderCredit(c) {
             <span class="credit-name">${esc(c.name)}</span>
           </summary>
           <div class="credit-card${photo ? '' : ' no-image'}">
-            ${photo ? `<div class="credit-photo"><img src="${esc(photo)}" alt="${esc(c.imageAlt ?? c.name)}" loading="lazy" decoding="async" width="148" height="148"></div>` : ''}
-            <div>
+            ${photo ? `<div class="credit-photo"><img src="${esc(photo)}" alt="${esc(c.imageAlt ?? c.name)}" loading="lazy" decoding="async" width="480" height="480"></div>` : ''}
+            <div class="credit-body">
               <p class="credit-meta label">${esc([c.discipline, c.base].filter(Boolean).join(' · '))}</p>
               <p class="credit-bio">${esc(c.bio)}</p>
               ${backed}
@@ -68,13 +68,18 @@ const credits = (await Promise.all(data.credits.map(renderCredit))).join('');
 const featuredCredits = data.featuredCredits.map(([slug, name]) => `<a href="#${esc(slug)}">${esc(name)}</a>`).join(', ');
 
 const { approach } = data;
-const statement = approach.statement.map(esc).join('<br>\n          ');
+const statement = approach.statement.map((line) => `<span>${esc(line)}</span>`).join('\n          ');
+// Each step carries its position (--i of --n) so the stylesheet can draw the steps as a staircase.
 const pathways = approach.pathways.map(({ title, invitation, steps }) => `
         <div class="pathway">
           <h3>${esc(title)}</h3>
           <p>${esc(invitation)}</p>
-          <ol class="pathway-steps" role="list">${steps.map((step) => `<li>${esc(step)}</li>`).join('')}</ol>
+          <ol class="pathway-steps" role="list" style="--n:${steps.length}">${steps.map((step, i) => `<li style="--i:${i}">${esc(step)}</li>`).join('')}</ol>
         </div>`).join('');
+
+const sections = [['approach', 'Approach'], ['credits', 'Credits'], ['about', 'About'], ['projects', 'Projects'], ['interviews', 'Interviews'], ['contact', 'Contact']];
+const navLinks = sections.map(([id, label]) => `<li><a href="#${id}">${label}</a></li>`).join('');
+const host = (url) => new URL(url).hostname.replace(/^www\./, '');
 
 const projectGroups = Object.entries(data.projectLinks).map(([group, links]) => `
         <div class="project-group">
@@ -82,7 +87,7 @@ const projectGroups = Object.entries(data.projectLinks).map(([group, links]) => 
           <ul class="project-links" role="list">${Object.entries(links).map(([name, url]) => `
             <li><a href="${esc(url)}" rel="noopener" target="_blank">
               <span class="project-name">${esc(name)}</span>
-              <span class="project-domain">${esc(new URL(url).hostname)}</span>
+              <span class="project-domain">${esc(host(url))}</span>
               <span class="project-arrow" aria-hidden="true">↗</span>
             </a></li>`).join('')}
           </ul>
@@ -92,7 +97,7 @@ const reels = data.interviews.map((r) => `
       <figure class="reel reveal">
         ${r.youtube
           ? `<div class="embed" data-type="youtube" data-id="${esc(r.youtube)}" data-title="${esc(r.title)}"></div>`
-          : `<a class="reel-link" href="${esc(r.url)}" rel="noopener" target="_blank">${esc(r.linkText ?? 'Read')} ↗</a>`}
+          : `<a class="reel-link" href="${esc(r.url)}" rel="noopener" target="_blank"><span class="reel-read">${esc(r.linkText ?? 'Read')} ↗</span><span class="label">${esc(host(r.url))}</span></a>`}
         <figcaption>
           <h3><a href="${esc(r.url)}" rel="noopener" target="_blank">${esc(r.title)}</a></h3>
           <p>${esc(r.description)}</p>
@@ -136,21 +141,29 @@ const html = `<!doctype html>
   <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
 </head>
 <body>
-  <header class="titles">
-    <div class="titles-top">
-      <span class="label">executiveproducing.com</span>
-      <span class="label">${esc(cy.base)}</span>
-    </div>
+  <nav class="bar" aria-label="Sections">
+    <a class="bar-mark" href="#top" aria-label="${esc(cy.name)}, back to the top">
+      <span class="bar-domain label" aria-hidden="true">executiveproducing.com</span>
+      <span class="bar-name" aria-hidden="true">${esc(cy.name)}</span>
+    </a>
+    <ul class="bar-links" role="list">${navLinks}</ul>
+    <button class="button bar-roll roll-button" type="button"><span class="dot" aria-hidden="true"></span><span class="roll-label">Roll credits</span></button>
+    <span class="bar-progress" aria-hidden="true"></span>
+  </nav>
+
+  <header class="titles" id="top">
     <div class="titles-main">
-      ${portrait ? `<figure class="portrait"><img src="${esc(portrait)}" alt="${esc(cy.imageAlt)}" width="132" height="132"></figure>` : ''}
-      <p class="label">Executive Producer</p>
+      <p class="label slate">Executive Producer</p>
       <h1>${esc(cy.name)}</h1>
-      <p class="lede">${cy.lede}</p>
+      <div class="byline">
+        ${portrait ? `<figure class="portrait"><img src="${esc(portrait)}" alt="${esc(cy.imageAlt)}" width="200" height="200"></figure>` : ''}
+        <p class="lede">${cy.lede}</p>
+      </div>
     </div>
     <div class="titles-bottom">
+      <button class="button primary roll-button" type="button"><span class="dot" aria-hidden="true"></span><span class="roll-label">Roll credits</span></button>
       <a class="button" href="#approach">The approach ↓</a>
       <a class="button" href="#credits">The credits ↓</a>
-      <button class="button roll-button" type="button"><span class="dot" aria-hidden="true"></span><span class="roll-label">Roll credits</span></button>
     </div>
   </header>
 
@@ -168,7 +181,7 @@ const html = `<!doctype html>
 
     <section class="section" id="credits" aria-labelledby="credits-title">
       <div class="section-head reveal">
-        <p class="label">Starring</p>
+        <p class="label slate">Starring</p>
         <h2 id="credits-title">The credits</h2>
         <p>${esc(data.creditsIntro)}</p>
         <p class="featured-credits">C.Y. works with ${featuredCredits}, and 20+ more.</p>
@@ -179,7 +192,7 @@ const html = `<!doctype html>
 
     <section class="section" id="about" aria-labelledby="about-title">
       <div class="section-head reveal">
-        <p class="label">Liner notes</p>
+        <p class="label slate">Liner notes</p>
         <h2 id="about-title">About C.Y.</h2>
       </div>
       <div class="notes reveal">
@@ -207,7 +220,7 @@ const html = `<!doctype html>
 
     <section class="section" id="interviews" aria-labelledby="interviews-title">
       <div class="section-head reveal">
-        <p class="label">Bonus features</p>
+        <p class="label slate">Bonus features</p>
         <h2 id="interviews-title">In conversation</h2>
       </div>
       <div class="reels">${reels}
@@ -215,8 +228,8 @@ const html = `<!doctype html>
     </section>
   </main>
 
-  <footer class="end">
-    <p class="label">That’s a wrap</p>
+  <footer class="end" id="contact">
+    <p class="label slate">That’s a wrap</p>
     <h2>Say hello</h2>
     ${linkList(cy.links)}
     <p class="colophon">Site by <a href="https://jonathanmann.net" rel="noopener" target="_blank">Jonathan Mann</a>, one of the credits. <a href="https://github.com/songadaymann/executiveproducing" rel="noopener" target="_blank">Source</a></p>
@@ -234,7 +247,7 @@ for (const file of ['styles.css', 'app.js', 'favicon.svg', 'og.png']) {
 await writeFile(path.join(dist, '404.html'), `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Cut</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..700&family=Instrument+Serif&display=swap"><link rel="stylesheet" href="/styles.css"></head>
-<body><main class="end"><p class="label">404</p><h2>This scene was cut.</h2><p><a class="button" href="/">Back to the credits</a></p></main></body></html>
+<body><main class="end"><p class="label slate">404</p><h2>This scene was cut.</h2><p><a class="button" href="/">Back to the credits</a></p></main></body></html>
 `);
 await writeFile(path.join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
 await writeFile(path.join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${SITE}/</loc></url></urlset>\n`);
