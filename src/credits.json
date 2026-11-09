@@ -6,6 +6,11 @@
     "imageAlt": "C.Y. Lee holding up an ice cream cone on a sidewalk",
     "description": "C.Y. Lee is a Seattle music nerd and patron who executive-produces the work of independent musicians, filmmakers, dancers, and photographers.",
     "lede": "A Seattle music nerd who pays for the work <strong>before it exists</strong>: albums, short films, tours, residencies, podcasts, and books by independent artists.",
+    "background": [
+      "BYSO, MIT, WMBR",
+      "MSFT, NASDAQ, SAFE",
+      "BTC, NFT, DAF"
+    ],
     "notes": [
       "Growing up, C.Y. Lee was surrounded by music. His father was a concert pianist from Hong Kong, his mother a music scholar, and his sister became a professional violinist; he played piano and cello. Then he chose technology. At MIT, college radio and DJing in the late ’80s pulled him into house and hip-hop.",
       "He wrote software at Apple, worked on what became Outlook at Microsoft, and joined RealNetworks in 1999, just as Napster was turning the record business upside down. How music moves from artists to listeners, and how money moves back, has occupied him ever since.",
@@ -46,7 +51,53 @@
       "Music Nerd": "https://musicnerd.net"
     }
   },
+  "approach": {
+    "title": "Culture Over Content",
+    "statement": [
+      "Music is the carrier wave of storytelling",
+      "Storytelling is the fabric of culture",
+      "We can weave the culture we want to see"
+    ],
+    "pathways": [
+      {
+        "title": "Music Nerd",
+        "invitation": "An invitation to care about the art & artist",
+        "steps": ["Like a song", "Like the artist", "Care about the artist", "Support the artist"]
+      },
+      {
+        "title": "Executive Producing",
+        "invitation": "An invitation to a financial conversation",
+        "steps": ["Merch table", "Projects in process", "Patronage"]
+      }
+    ]
+  },
   "creditsIntro": "The artists C.Y. backs, and the work his money helped make: albums, short films, a tour, a residency, a podcast, a music player, a photo book. Open any credit for the story and the music.",
+  "featuredCredits": [
+    ["sound-of-fractures", "Sound of Fractures"],
+    ["rae-isla", "Rae Isla"],
+    ["boreta", "Boreta"],
+    ["latasha", "LATASHÁ"],
+    ["iman-europe", "Iman Europe"],
+    ["forrest-mortifee", "Forrest Mortifee"],
+    ["song-a-day", "Song a Day Mann"],
+    ["fridays-at-the-park", "Fridays at The Park"],
+    ["vivid-fever-dreams", "Vivid Fever Dreams"]
+  ],
+  "projectLinks": {
+    "Projects": {
+      "Music Nerd": "https://musicnerd.net",
+      "Sleevenote": "https://sleevenote.com",
+      "Subvert": "https://subvert.fm",
+      "Turntable": "https://turntable.fyi",
+      "In Process": "https://inprocess.world",
+      "Prospect": "https://prospect.art",
+      "House of Paper": "https://ofpaper.house"
+    },
+    "Documentaries": {
+      "Wicket": "https://wicketdocumentary.com",
+      "New Wave": "https://newwavedocumentary.com"
+    }
+  },
   "credits": [
     {
       "slug": "latasha",
@@ -63,7 +114,7 @@
         "Instagram": "https://www.instagram.com/callmelatasha",
         "Bandcamp": "https://callmelatasha.bandcamp.com/",
         "Spotify": "https://open.spotify.com/artist/2lW1SPnxy7JqGV84TcSINi",
-        "In Process": "https://inprocess.art"
+        "In Process": "https://inprocess.world"
       },
       "embed": {
         "type": "bandcamp",
@@ -121,6 +172,17 @@
       },
       "image": "artists/sound-of-fractures.webp",
       "imageAlt": "Sound of Fractures against a red background"
+    },
+    {
+      "slug": "boreta",
+      "name": "Boreta",
+      "role": "Featuring",
+      "discipline": "Electronic musician and producer",
+      "bio": "Justin Boreta co-founded The Glitch Mob in 2006. He makes ambient music as Superposition and released his solo debut, Hear the Listener, in 2025.",
+      "links": {
+        "Website": "https://boreta.net/about/",
+        "Bandcamp": "https://boreta.bandcamp.com/"
+      }
     },
     {
       "slug": "iman-europe",

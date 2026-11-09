@@ -65,6 +65,28 @@ async function renderCredit(c) {
 const cy = data.cy;
 const portrait = await media(cy.image);
 const credits = (await Promise.all(data.credits.map(renderCredit))).join('');
+const featuredCredits = data.featuredCredits.map(([slug, name]) => `<a href="#${esc(slug)}">${esc(name)}</a>`).join(', ');
+
+const { approach } = data;
+const statement = approach.statement.map(esc).join('<br>\n          ');
+const pathways = approach.pathways.map(({ title, invitation, steps }) => `
+        <div class="pathway">
+          <h3>${esc(title)}</h3>
+          <p>${esc(invitation)}</p>
+          <ol class="pathway-steps" role="list">${steps.map((step) => `<li>${esc(step)}</li>`).join('')}</ol>
+        </div>`).join('');
+
+const projectGroups = Object.entries(data.projectLinks).map(([group, links]) => `
+        <div class="project-group">
+          <h3 class="label">${esc(group)}</h3>
+          <ul class="project-links" role="list">${Object.entries(links).map(([name, url]) => `
+            <li><a href="${esc(url)}" rel="noopener" target="_blank">
+              <span class="project-name">${esc(name)}</span>
+              <span class="project-domain">${esc(new URL(url).hostname)}</span>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </a></li>`).join('')}
+          </ul>
+        </div>`).join('');
 
 const reels = data.interviews.map((r) => `
       <figure class="reel reveal">
@@ -78,6 +100,7 @@ const reels = data.interviews.map((r) => `
       </figure>`).join('');
 
 const facts = cy.facts.map(([k, v]) => `<div><dt class="label">${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('');
+const background = cy.background.map(esc).join('<br>');
 const notes = cy.notes.map((p) => `<p>${esc(p)}</p>`).join('\n          ');
 
 const jsonLd = {
@@ -125,17 +148,30 @@ const html = `<!doctype html>
       <p class="lede">${cy.lede}</p>
     </div>
     <div class="titles-bottom">
+      <a class="button" href="#approach">The approach ↓</a>
       <a class="button" href="#credits">The credits ↓</a>
       <button class="button roll-button" type="button"><span class="dot" aria-hidden="true"></span><span class="roll-label">Roll credits</span></button>
     </div>
   </header>
 
   <main>
+    <section class="section" id="approach" aria-labelledby="approach-title">
+      <div class="section-head reveal">
+        <h2 id="approach-title">${esc(approach.title)}</h2>
+      </div>
+      <div class="approach reveal">
+        <p class="statement">${statement}</p>
+        <div class="pathways">${pathways}
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="credits" aria-labelledby="credits-title">
       <div class="section-head reveal">
         <p class="label">Starring</p>
         <h2 id="credits-title">The credits</h2>
         <p>${esc(data.creditsIntro)}</p>
+        <p class="featured-credits">C.Y. works with ${featuredCredits}, and 20+ more.</p>
       </div>
       <ol class="credits">${credits}
       </ol>
@@ -150,12 +186,23 @@ const html = `<!doctype html>
         <div class="notes-text">
           ${notes}
         </div>
-        <dl class="facts">${facts}</dl>
+        <dl class="facts">
+          ${facts}
+          <div><dt class="label">In shorthand</dt><dd>${background}</dd></div>
+        </dl>
       </div>
       <figure class="quote reveal">
         <blockquote>${esc(cy.quote.text)}</blockquote>
         <figcaption class="label">${esc(cy.quote.cite)}</figcaption>
       </figure>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="section-head reveal">
+        <h2 id="projects-title">Projects &amp; documentaries</h2>
+      </div>
+      <div class="project-directory reveal">${projectGroups}
+      </div>
     </section>
 
     <section class="section" id="interviews" aria-labelledby="interviews-title">
