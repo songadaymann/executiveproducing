@@ -33,14 +33,32 @@ const linkList = (links) => {
   return `<ul class="links">${items.map(([label, url]) => `<li><a href="${esc(url)}" rel="noopener" target="_blank">${esc(label)}</a></li>`).join('')}</ul>`;
 };
 
-async function renderCredit(c) {
-  const photo = await media(c.image);
+const host = (url) => new URL(url).hostname.replace(/^www\./, '');
+
+// What opens under a name: a photo, who they are, what C.Y. did, links, and a player.
+function renderCard(c, photo) {
+  const meta = [c.discipline, c.base].filter(Boolean).join(' · ');
   const embed = c.embed
     ? `<div class="embed" data-type="${esc(c.embed.type)}" data-id="${esc(c.embed.id)}" data-title="${esc(c.embed.title)}"></div>`
     : '';
   const backed = c.backed
     ? `<div class="credit-backed"><p class="label">C.Y.’s part</p><p>${esc(c.backed)}${c.source ? ` <a href="${esc(c.source)}" rel="noopener" target="_blank">Source</a>` : ''}</p></div>`
     : '';
+  return `<div class="credit-card${photo ? '' : ' no-image'}">
+            ${photo ? `<div class="credit-photo"><img src="${esc(photo)}" alt="${esc(c.imageAlt ?? c.name)}" loading="lazy" decoding="async" width="480" height="480"></div>` : ''}
+            <div class="credit-body">
+              ${meta ? `<p class="credit-meta label">${esc(meta)}</p>` : ''}
+              <p class="credit-bio">${esc(c.bio)}</p>
+              ${backed}
+              ${linkList(c.links)}
+            </div>
+            ${embed}
+          </div>`;
+}
+
+// The credits that roll large: role on one side of the centre axis, name on the other.
+async function renderCredit(c) {
+  const photo = await media(c.image);
   return `
       <li class="credit reveal" id="${esc(c.slug)}">
         <details>
@@ -48,23 +66,45 @@ async function renderCredit(c) {
             <span class="credit-role">${esc(c.role)}${c.work ? `<span class="work">${esc(c.work)}</span>` : ''}</span>
             <span class="credit-name">${esc(c.name)}</span>
           </summary>
-          <div class="credit-card${photo ? '' : ' no-image'}">
-            ${photo ? `<div class="credit-photo"><img src="${esc(photo)}" alt="${esc(c.imageAlt ?? c.name)}" loading="lazy" decoding="async" width="480" height="480"></div>` : ''}
-            <div class="credit-body">
-              <p class="credit-meta label">${esc([c.discipline, c.base].filter(Boolean).join(' · '))}</p>
-              <p class="credit-bio">${esc(c.bio)}</p>
-              ${backed}
-              ${linkList(c.links)}
-            </div>
-            ${embed}
-          </div>
+          ${renderCard(c, photo)}
         </details>
       </li>`;
+}
+
+// A compact row that opens the same card. Under the name, a credit shows its role and work;
+// a project (anything with a url) shows its domain.
+async function renderEntry(c) {
+  const photo = await media(c.image);
+  const sub = c.url
+    ? `<span class="entry-domain">${esc(host(c.url))}</span>`
+    : `<span class="entry-role">${esc(c.role)}</span>${c.work ? `<span class="work">${esc(c.work)}</span>` : ''}`;
+  return `
+            <li class="entry" id="${esc(c.slug)}">
+              <details>
+                <summary${photo ? ` data-peek="${esc(photo)}"` : ''}>
+                  <span class="entry-name">${esc(c.name)}</span>
+                  <span class="entry-sub">${sub}</span>
+                </summary>
+                ${renderCard(c, photo)}
+              </details>
+            </li>`;
+}
+
+// Rows in two lists side by side, filled down the left one first.
+async function renderColumns(items) {
+  const rows = await Promise.all(items.map(renderEntry));
+  const half = Math.ceil(rows.length / 2);
+  const lists = [rows.slice(0, half), rows.slice(half)].filter((list) => list.length);
+  return `<div class="entry-cols">${lists.map((list) => `
+          <ol class="entries" role="list">${list.join('')}
+          </ol>`).join('')}
+        </div>`;
 }
 
 const cy = data.cy;
 const portrait = await media(cy.image);
 const credits = (await Promise.all(data.credits.map(renderCredit))).join('');
+const moreCredits = await renderColumns(data.moreCredits);
 const featuredCredits = data.featuredCredits.map(([slug, name]) => `<a href="#${esc(slug)}">${esc(name)}</a>`).join(', ');
 
 const { approach } = data;
@@ -79,19 +119,12 @@ const pathways = approach.pathways.map(({ title, invitation, steps }) => `
 
 const sections = [['approach', 'Approach'], ['credits', 'Credits'], ['about', 'About'], ['projects', 'Projects'], ['interviews', 'Interviews'], ['contact', 'Contact']];
 const navLinks = sections.map(([id, label]) => `<li><a href="#${id}">${label}</a></li>`).join('');
-const host = (url) => new URL(url).hostname.replace(/^www\./, '');
 
-const projectGroups = Object.entries(data.projectLinks).map(([group, links]) => `
-        <div class="project-group">
-          <h3 class="label">${esc(group)}</h3>
-          <ul class="project-links" role="list">${Object.entries(links).map(([name, url]) => `
-            <li><a href="${esc(url)}" rel="noopener" target="_blank">
-              <span class="project-name">${esc(name)}</span>
-              <span class="project-domain">${esc(host(url))}</span>
-              <span class="project-arrow" aria-hidden="true">↗</span>
-            </a></li>`).join('')}
-          </ul>
-        </div>`).join('');
+const projectGroups = (await Promise.all(data.projects.map(async ({ group, items }) => `
+        <div class="entry-group reveal">
+          <h3 class="label slate">${esc(group)}</h3>
+          ${await renderColumns(items)}
+        </div>`))).join('');
 
 const reels = data.interviews.map((r) => `
       <figure class="reel reveal">
@@ -188,6 +221,10 @@ const html = `<!doctype html>
       </div>
       <ol class="credits">${credits}
       </ol>
+      <div class="entry-group more-credits reveal">
+        <h3 class="label slate">${esc(data.moreCreditsLabel)}</h3>
+        ${moreCredits}
+      </div>
     </section>
 
     <section class="section" id="about" aria-labelledby="about-title">
@@ -212,9 +249,9 @@ const html = `<!doctype html>
 
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="section-head reveal">
-        <h2 id="projects-title">Projects &amp; documentaries</h2>
+        <h2 id="projects-title">Projects &amp; Documentaries</h2>
       </div>
-      <div class="project-directory reveal">${projectGroups}
+      <div class="project-directory">${projectGroups}
       </div>
     </section>
 
@@ -251,4 +288,5 @@ await writeFile(path.join(dist, '404.html'), `<!doctype html>
 `);
 await writeFile(path.join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
 await writeFile(path.join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${SITE}/</loc></url></urlset>\n`);
-console.log(`Built dist/ with ${data.credits.length} credits${portrait ? '' : ' (no private-assets/, so no photos)'}.`);
+const projectCount = data.projects.reduce((n, { items }) => n + items.length, 0);
+console.log(`Built dist/ with ${data.credits.length + data.moreCredits.length} credits and ${projectCount} projects${portrait ? '' : ' (no private-assets/, so no photos)'}.`);

@@ -41,11 +41,9 @@ These live in the ignored `private-assets/` folder. They were downloaded on Octo
 | `private-assets/artists/la-equis.webp` | LA EQUIS's Spotify artist image, cropped to 480px | https://i.scdn.co/image/ab6761610000e5eb72bec3eb96f45490ed06496a | The artist's or their label's own image |
 | `private-assets/artists/latasha.webp` | LATASHÁ's Spotify artist image, cropped to 480px | https://i.scdn.co/image/ab6761610000e5ebea5ac03b1636db2a6ce6764b | The artist's or their label's own image |
 | `private-assets/artists/maceagon-voyce.webp` | Guided by Voyces publication image (Substack), cropped to 480px | https://substack-post-media.s3.amazonaws.com/public/images/8b4ba382-00d3-4936-9d42-3fd29c6fab32_2012x2012.jpeg | The artist's or their label's own image |
-| `private-assets/artists/pete-rango.webp` | RUSH cover art (peterango.com), cropped to 480px | https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PETE%20RANGO%20-%20RUSH%20COVER-rP6xyyWe3yvkIBxRU4h8NQmODMhuHH.png | The artist's or their label's own image |
 | `private-assets/artists/rae-isla.webp` | Rae Isla's Spotify artist image, cropped to 480px | https://i.scdn.co/image/ab6761610000e5eb1a85d12278d5cd095666c337 | The artist's or their label's own image |
 | `private-assets/artists/sound-of-fractures.webp` | Sound of Fractures' Spotify artist image, cropped to 480px | https://i.scdn.co/image/ab6761610000e5eb5bc5bd1767967b125c58b1b2 | The artist's or their label's own image |
 | `private-assets/artists/tk-the-legend.webp` | DARKSIDE cover art (darkside.love share image), cropped to 480px | https://www.darkside.love/images/darkside-cover-og.png | The artist's or their label's own image |
-| `private-assets/artists/tom-vek.webp` | Tom Vek's Spotify artist image, cropped to 480px | https://i.scdn.co/image/ab6761610000e5eba33df21b20428ec26f36fe61 | The artist's or their label's own image |
 | `private-assets/artists/vivid-fever-dreams.webp` | Vivid Fever Dreams' Spotify artist image, cropped to 480px | https://i.scdn.co/image/ab6761610000e5eb0b3528debd9a76b0201d17d5 | The artist's or their label's own image |
 | `private-assets/artists/yuri-beats.webp` | Future Movements for Earth People cover (Spotify), cropped to 480px | https://i.scdn.co/image/ab67616d0000b27377ec7ab74f8c036f96b55632 | The artist's or their label's own image |
 

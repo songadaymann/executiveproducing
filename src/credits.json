@@ -71,7 +71,7 @@
       }
     ]
   },
-  "creditsIntro": "The artists C.Y. backs, and the work his money helped make: albums, short films, a tour, a residency, a podcast, a music player, a photo book. Open any credit for the story and the music.",
+  "creditsIntro": "The artists C.Y. backs, and the work his money helped make: albums, short films, a tour, a residency, a podcast, a photo book. Open any credit for the story and the music.",
   "featuredCredits": [
     ["sound-of-fractures", "Sound of Fractures"],
     ["rae-isla", "Rae Isla"],
@@ -83,21 +83,143 @@
     ["fridays-at-the-park", "Fridays at The Park"],
     ["vivid-fever-dreams", "Vivid Fever Dreams"]
   ],
-  "projectLinks": {
-    "Projects": {
-      "Music Nerd": "https://musicnerd.net",
-      "Sleevenote": "https://sleevenote.com",
-      "Subvert": "https://subvert.fm",
-      "Turntable": "https://turntable.fyi",
-      "In Process": "https://inprocess.world",
-      "Prospect": "https://prospect.art",
-      "House of Paper": "https://ofpaper.house"
+  "projects": [
+    {
+      "group": "Projects",
+      "items": [
+        {
+          "slug": "music-nerd",
+          "name": "Music Nerd",
+          "url": "https://musicnerd.net",
+          "discipline": "Artist profiles and research tools",
+          "bio": "Music Nerd brings an artist’s music, links, and stories together in one place, on the idea that there’s more to an artist than a song. Fans find official links and updates, artists claim their profiles and add their own lore, and builders get an API of artist data. Pete Rango, a producer and engineer, builds its research tools and website.",
+          "backed": "Started Music Nerd in 2013 with Carl Tydingco, a fellow RealNetworks alum. The two of them now work with around thirty artists through it.",
+          "source": null,
+          "links": {
+            "Website": "https://musicnerd.net",
+            "Instagram": "https://www.instagram.com/musicnerdnet/",
+            "X": "https://x.com/musicnerdnet",
+            "Substack": "https://musicnerds.substack.com"
+          }
+        },
+        {
+          "slug": "sleevenote",
+          "name": "Sleevenote",
+          "url": "https://sleevenote.com",
+          "discipline": "Music player",
+          "bio": "Sleevenote is a square, artwork-first player for digital music you actually own. It puts the whole sleeve and booklet on screen: extra imagery, lyrics, and credits, supplied by the artists themselves. Musician and designer Tom Vek built it with engineer Chris Hipgrave, and the first 100 prototypes sold out.",
+          "backed": "Executive producer of Sleevenote, credited on its team list. Carl Tydingco is its advisor.",
+          "source": "https://sleevenote.com/",
+          "links": {
+            "Website": "https://sleevenote.com",
+            "Instagram": "https://www.instagram.com/sleevenote",
+            "X": "https://x.com/sleevenote",
+            "Substack": "https://sleevenoteupdates.substack.com"
+          }
+        },
+        {
+          "slug": "subvert",
+          "name": "Subvert",
+          "url": "https://subvert.fm",
+          "discipline": "Music marketplace co-op",
+          "bio": "Subvert is a music marketplace owned by its community. It’s a cooperative: artists, labels, and supporters are all co-owners with one vote each, and artists and labels keep 100% of what they earn there.",
+          "backed": null,
+          "source": null,
+          "links": {
+            "Website": "https://subvert.fm"
+          }
+        },
+        {
+          "slug": "turntable",
+          "name": "Turntable",
+          "url": "https://turntable.fyi",
+          "discipline": "Music app",
+          "bio": "Turntable describes itself as a music organization tool and social curation space. For now there’s a waitlist.",
+          "backed": null,
+          "source": null,
+          "links": {
+            "Website": "https://turntable.fyi"
+          }
+        },
+        {
+          "slug": "in-process",
+          "name": "In Process",
+          "url": "https://inprocess.world",
+          "discipline": "Platform for artists",
+          "bio": "In Process is a collective timeline for artists: a place to document, and earn from, the creative journey as it happens rather than only the finished product. LATASHÁ created it.",
+          "backed": "Funds In Process, and its team list credits him as executive producer.",
+          "source": "https://www.decential.io/articles/the-modern-gala-how-latasha-and-cy-lee-are-meming-patronage-into-existence",
+          "links": {
+            "Website": "https://inprocess.world",
+            "X": "https://x.com/stayinprocess"
+          }
+        },
+        {
+          "slug": "prospect",
+          "name": "Prospect",
+          "url": "https://prospect.art",
+          "discipline": "Patronage program",
+          "bio": "Prospect calls itself patronage for the modern age: individual patrons fund creative projects in increments of $100, $500, or $1,000, with no expectation of a financial return. It’s a program of the nonprofit Dialect Foundation, so the gifts are tax-deductible, and it takes on music, art, film, theater, and research.",
+          "backed": null,
+          "source": null,
+          "links": {
+            "Website": "https://prospect.art"
+          }
+        },
+        {
+          "slug": "house-of-paper",
+          "name": "House of Paper",
+          "url": "https://ofpaper.house",
+          "discipline": "Artist-funding project",
+          "base": "Seattle",
+          "bio": "House of Paper is a quiet effort to free artists from making decisions for the algorithm, and to ground creative work in trust, vision, and context instead. It funds music that resists metrics, and it’s building a network of artists running musical experiments meant to move culture. It’s a fiscally sponsored project of Seattle’s Allied Arts Foundation.",
+          "backed": "Its founding patron, as the House of Paper manifesto names him.",
+          "source": "https://houseofpaper.music/",
+          "links": {
+            "Website": "https://ofpaper.house",
+            "Allied Arts Foundation": "https://www.alliedartsfoundation.org/fiscal-sponsored-projects-2025/blog-post-title-one-kr46w-yd73h-5hc4w-cfpny-ht75a-lzmkw-wspcf-p3nd5-hj2xm-c2pw7-nlmfr-62yly-rnc5a-mkm52-scc4n-75s72-pj27a-85g4p"
+          },
+          "image": "artists/house-of-paper.webp",
+          "imageAlt": "House of Paper graphic"
+        }
+      ]
     },
-    "Documentaries": {
-      "Wicket": "https://wicketdocumentary.com",
-      "New Wave": "https://newwavedocumentary.com"
+    {
+      "group": "Documentaries",
+      "items": [
+        {
+          "slug": "wicket",
+          "name": "Wicket",
+          "url": "https://wicketdocumentary.com",
+          "discipline": "Feature documentary, directed by Lily Plotkin",
+          "bio": "WICKET follows Gabriel “Wicket” Jaochico, who started breaking in San Francisco in 1991, joined the Renegade Rockers, and became famous for power moves fused with East Coast footwork. He has choreographed for Usher, Will Smith, and Christina Aguilera, and now teaches breaking at Texas State. Directed by Lily Plotkin, the film covers his life in dance and his decision to come out at 41; it won Frameline’s Audience Award for Best Documentary.",
+          "backed": "Thanked by Wicket, by name, as the film headed to its Austin screening in September 2026.",
+          "source": "https://www.instagram.com/bboywicket/p/Db8Qd2vka-A/",
+          "links": {
+            "Website": "https://wicketdocumentary.com",
+            "Instagram": "https://www.instagram.com/bboywicket/",
+            "Frameline": "https://www.frameline.org/films/frameline49/wicket"
+          },
+          "image": "artists/bboy-wicket.webp",
+          "imageAlt": "Bboy Wicket in a cap, arms crossed, in a studio"
+        },
+        {
+          "slug": "new-wave",
+          "name": "New Wave",
+          "url": "https://newwavedocumentary.com",
+          "discipline": "Feature documentary, directed by Elizabeth Ai",
+          "bio": "New Wave, a film by Elizabeth Ai, follows the Vietnamese new wave music scene of the 1980s and the lasting mark of war and displacement on the Vietnamese diaspora. It premiered in competition at the 2024 Tribeca Festival, where Ai earned a special jury mention for new documentary directors, and won the Grand Jury Award for Best Feature Film at Viet Film Fest. It’s streaming on the Criterion Channel.",
+          "backed": "One of the film’s executive producers. Music Nerd is credited too, under “In association with.”",
+          "source": "https://newwavedocumentary.com/about",
+          "links": {
+            "Website": "https://newwavedocumentary.com",
+            "Instagram": "https://www.instagram.com/newwavedoc",
+            "Criterion Channel": "https://www.criterionchannel.com/new-wave"
+          }
+        }
+      ]
     }
-  },
+  ],
   "credits": [
     {
       "slug": "latasha",
@@ -125,30 +247,6 @@
       "imageAlt": "LATASHÁ’s artist image: a silver figure crouching"
     },
     {
-      "slug": "rae-isla",
-      "name": "Rae Isla",
-      "role": "Executive Producer",
-      "work": "Music, video, and live shows",
-      "discipline": "Singer-songwriter",
-      "base": "Los Angeles, from Bainbridge Island, WA",
-      "bio": "Rae Isla grew up on Bainbridge Island playing classical cello, went to Berklee on a vocal scholarship, and now writes folk, indie rock, and alt-country in Los Angeles. She calls herself a modern-day traveling bard. Her albums are Another Life (2021) and New Frontier (2024), recorded in Mexico City, and she sang the title song for the film Ezra.",
-      "backed": "Has been her executive producer for about three years, across her records, videos, and live shows. He’s also on the supporter list for New Frontier.",
-      "source": "https://raeisla.bandcamp.com/album/new-frontier",
-      "links": {
-        "Website": "https://raeisla.com/",
-        "Instagram": "https://www.instagram.com/raeisla/",
-        "Bandcamp": "https://raeisla.bandcamp.com/",
-        "Spotify": "https://open.spotify.com/artist/7dfrA1fYW7chYdftUxLnk5"
-      },
-      "embed": {
-        "type": "bandcamp",
-        "id": "album=1121801099",
-        "title": "New Frontier, by Rae Isla"
-      },
-      "image": "artists/rae-isla.webp",
-      "imageAlt": "Rae Isla in a cowboy hat against a blue wall"
-    },
-    {
       "slug": "sound-of-fractures",
       "name": "Sound of Fractures",
       "role": "Executive Producer",
@@ -174,40 +272,21 @@
       "imageAlt": "Sound of Fractures against a red background"
     },
     {
-      "slug": "boreta",
-      "name": "Boreta",
+      "slug": "song-a-day",
+      "name": "Jonathan Mann",
       "role": "Featuring",
-      "discipline": "Electronic musician and producer",
-      "bio": "Justin Boreta co-founded The Glitch Mob in 2006. He makes ambient music as Superposition and released his solo debut, Hear the Listener, in 2025.",
+      "work": "We All Make A Platformer",
+      "discipline": "Songwriter, game maker",
+      "base": null,
+      "bio": "Jonathan Mann has written and recorded a song every day since January 1, 2009, which earned him a Guinness World Record. He also makes games, including WAMP (We All Make A Platformer), where everyone builds a room and then plays everyone else’s. He made this website.",
+      "backed": "One of the roughly thirty artists C.Y. and Carl work with through Music Nerd. C.Y. is also a friend and mentor.",
+      "source": "https://musicnerds.substack.com/p/music-nerd-platform-update-cb9",
       "links": {
-        "Website": "https://boreta.net/about/",
-        "Bandcamp": "https://boreta.bandcamp.com/"
-      }
-    },
-    {
-      "slug": "iman-europe",
-      "name": "Iman Europe",
-      "role": "Executive Producer",
-      "work": "ego death, a short film",
-      "discipline": "Singer, rapper, writer, director",
-      "base": "Los Angeles",
-      "bio": "Iman Europe is an independent Los Angeles artist and writer who mixes R&B, soul, hip-hop, jazz, and electronic music. Songs from her album Nami landed on HBO’s Insecure and Netflix’s Nappily Ever After. Chrysalis (2025), made with producer Kaelin Ellis, is the middle chapter of a trilogy, and its song “ego death” became a short film she co-directed with Elyse Thoms.",
-      "backed": "Executive-produced the “ego death” short film and song (July 2026), which passed a million views in two days.",
-      "source": "https://beattrotterz.com/2026/07/24/iman-europe-ego-death-the-official-short-film/",
-      "links": {
-        "Instagram": "https://www.instagram.com/imaneurope/",
-        "YouTube": "https://www.youtube.com/@ImanEurope",
-        "Bandcamp": "https://imaneurope.bandcamp.com/",
-        "Spotify": "https://open.spotify.com/artist/6adkmtXg0Qlmahg9SxNVl0",
-        "Substack": "https://imaneurope.substack.com"
+        "Song A Day": "https://songaday.studio",
+        "WAMP": "https://wamp.land/"
       },
-      "embed": {
-        "type": "youtube",
-        "id": "0YzH2ePR07o",
-        "title": "EGO DEATH (The Official Short Film)"
-      },
-      "image": "artists/iman-europe.webp",
-      "imageAlt": "Iman Europe with long braids in blue light"
+      "embed": null,
+      "image": null
     },
     {
       "slug": "tk-the-legend",
@@ -232,6 +311,69 @@
       },
       "image": "artists/tk-the-legend.webp",
       "imageAlt": "DARKSIDE cover art: a figure in a long coat under a black sun"
+    },
+    {
+      "slug": "rae-isla",
+      "name": "Rae Isla",
+      "role": "Executive Producer",
+      "work": "Music, video, and live shows",
+      "discipline": "Singer-songwriter",
+      "base": "Los Angeles, from Bainbridge Island, WA",
+      "bio": "Rae Isla grew up on Bainbridge Island playing classical cello, went to Berklee on a vocal scholarship, and now writes folk, indie rock, and alt-country in Los Angeles. She calls herself a modern-day traveling bard. Her albums are Another Life (2021) and New Frontier (2024), recorded in Mexico City, and she sang the title song for the film Ezra.",
+      "backed": "Has been her executive producer for about three years, across her records, videos, and live shows. He’s also on the supporter list for New Frontier.",
+      "source": "https://raeisla.bandcamp.com/album/new-frontier",
+      "links": {
+        "Website": "https://raeisla.com/",
+        "Instagram": "https://www.instagram.com/raeisla/",
+        "Bandcamp": "https://raeisla.bandcamp.com/",
+        "Spotify": "https://open.spotify.com/artist/7dfrA1fYW7chYdftUxLnk5"
+      },
+      "embed": {
+        "type": "bandcamp",
+        "id": "album=1121801099",
+        "title": "New Frontier, by Rae Isla"
+      },
+      "image": "artists/rae-isla.webp",
+      "imageAlt": "Rae Isla in a cowboy hat against a blue wall"
+    },
+    {
+      "slug": "boreta",
+      "name": "Boreta",
+      "role": "Featuring",
+      "discipline": "Electronic musician and producer",
+      "bio": "Justin Boreta co-founded The Glitch Mob in 2006. He makes ambient music as Superposition and released his solo debut, Hear the Listener, in 2025.",
+      "links": {
+        "Website": "https://boreta.net/about/",
+        "Bandcamp": "https://boreta.bandcamp.com/"
+      }
+    }
+  ],
+  "moreCreditsLabel": "Also starring",
+  "moreCredits": [
+    {
+      "slug": "iman-europe",
+      "name": "Iman Europe",
+      "role": "Executive Producer",
+      "work": "ego death, a short film",
+      "discipline": "Singer, rapper, writer, director",
+      "base": "Los Angeles",
+      "bio": "Iman Europe is an independent Los Angeles artist and writer who mixes R&B, soul, hip-hop, jazz, and electronic music. Songs from her album Nami landed on HBO’s Insecure and Netflix’s Nappily Ever After. Chrysalis (2025), made with producer Kaelin Ellis, is the middle chapter of a trilogy, and its song “ego death” became a short film she co-directed with Elyse Thoms.",
+      "backed": "Executive-produced the “ego death” short film and song (July 2026), which passed a million views in two days.",
+      "source": "https://beattrotterz.com/2026/07/24/iman-europe-ego-death-the-official-short-film/",
+      "links": {
+        "Instagram": "https://www.instagram.com/imaneurope/",
+        "YouTube": "https://www.youtube.com/@ImanEurope",
+        "Bandcamp": "https://imaneurope.bandcamp.com/",
+        "Spotify": "https://open.spotify.com/artist/6adkmtXg0Qlmahg9SxNVl0",
+        "Substack": "https://imaneurope.substack.com"
+      },
+      "embed": {
+        "type": "youtube",
+        "id": "0YzH2ePR07o",
+        "title": "EGO DEATH (The Official Short Film)"
+      },
+      "image": "artists/iman-europe.webp",
+      "imageAlt": "Iman Europe with long braids in blue light"
     },
     {
       "slug": "ahmed-sirour",
@@ -272,30 +414,6 @@
       "embed": null,
       "image": "artists/maceagon-voyce.webp",
       "imageAlt": "Black-and-white portrait of MacEagon Voyce"
-    },
-    {
-      "slug": "tom-vek",
-      "name": "Tom Vek",
-      "role": "Executive Producer",
-      "work": "Sleevenote, with Chris Hipgrave",
-      "discipline": "Musician, designer",
-      "base": "London",
-      "bio": "Tom Vek made his debut album We Have Sound (2005) mostly alone in his parents’ garage, then followed it with Leisure Seizure, Luck, and New Symbols. He’s also a graphic designer. With engineer Chris Hipgrave he built Sleevenote, a square, artwork-first player for music you actually own, whose first 100 units sold out in 2026.",
-      "backed": "Executive producer of Sleevenote. Tom also showed it at the open studio C.Y. and Carl hosted at FWB Fest in August 2026.",
-      "source": "https://www.instagram.com/fwb.help/p/DbW-K01mxyk/",
-      "links": {
-        "Website": "https://www.tomvek.com",
-        "Sleevenote": "https://sleevenote.com/",
-        "Instagram": "https://www.instagram.com/tom_vek/",
-        "Bandcamp": "https://tomvek.bandcamp.com/"
-      },
-      "embed": {
-        "type": "spotify",
-        "id": "track/2040zzMYZ6Pm7Gnsy4vPrb",
-        "title": "Hold On To Your Love, by Tom Vek"
-      },
-      "image": "artists/tom-vek.webp",
-      "imageAlt": "Tom Vek in a yellow jacket, hands on his head"
     },
     {
       "slug": "duo-do",
@@ -340,24 +458,6 @@
       "imageAlt": "The Amerge logo in black on yellow"
     },
     {
-      "slug": "bboy-wicket",
-      "name": "Bboy Wicket",
-      "role": "Special Thanks",
-      "work": "WICKET, a documentary",
-      "discipline": "B-boy, choreographer, teacher",
-      "base": "Austin, from San Francisco",
-      "bio": "Gabriel “Wicket” Jaochico started breaking in San Francisco in 1991, joined the Renegade Rockers, and became famous for power moves fused with East Coast footwork. He has choreographed for Usher, Will Smith, and Christina Aguilera, and now teaches breaking at Texas State. WICKET, directed by Lily Plotkin, follows his life in dance and his decision to come out at 41; it won Frameline’s Audience Award for Best Documentary.",
-      "backed": "Thanked by Wicket, by name, as the film headed to its Austin screening in September 2026.",
-      "source": "https://www.instagram.com/bboywicket/p/Db8Qd2vka-A/",
-      "links": {
-        "Instagram": "https://www.instagram.com/bboywicket/",
-        "The film": "https://www.frameline.org/films/frameline49/wicket"
-      },
-      "embed": null,
-      "image": "artists/bboy-wicket.webp",
-      "imageAlt": "Bboy Wicket in a cap, arms crossed, in a studio"
-    },
-    {
       "slug": "trevor-m-banta",
       "name": "Trevor M. Banta",
       "role": "Special Thanks",
@@ -394,23 +494,6 @@
       },
       "image": "artists/fridays-at-the-park.webp",
       "imageAlt": "Season 1 cover: a contact sheet of black-and-white photos"
-    },
-    {
-      "slug": "house-of-paper",
-      "name": "House of Paper",
-      "role": "Patron",
-      "work": "Music for meaning over metrics",
-      "discipline": "Artist-funding project",
-      "base": "Seattle",
-      "bio": "House of Paper is a quiet effort to free artists from making decisions for the algorithm, and to ground creative work in trust, vision, and context instead. It funds music that resists metrics, and it’s building a network of artists running musical experiments meant to move culture. It’s a fiscally sponsored project of Seattle’s Allied Arts Foundation.",
-      "backed": null,
-      "source": null,
-      "links": {
-        "Allied Arts Foundation": "https://www.alliedartsfoundation.org/fiscal-sponsored-projects-2025/blog-post-title-one-kr46w-yd73h-5hc4w-cfpny-ht75a-lzmkw-wspcf-p3nd5-hj2xm-c2pw7-nlmfr-62yly-rnc5a-mkm52-scc4n-75s72-pj27a-85g4p"
-      },
-      "embed": null,
-      "image": "artists/house-of-paper.webp",
-      "imageAlt": "House of Paper graphic"
     },
     {
       "slug": "yuri-beats",
@@ -518,46 +601,6 @@
       "links": {
         "The Ascension Service": "https://www.ascensionservice.org",
         "Instagram": "https://www.instagram.com/forrestmortifee/"
-      },
-      "embed": null,
-      "image": null
-    },
-    {
-      "slug": "pete-rango",
-      "name": "Pete Rango",
-      "role": "Featuring",
-      "work": "Music Nerd",
-      "discipline": "Producer, engineer",
-      "base": "Richmond, VA",
-      "bio": "Pete Rango (Peter Arango) was born in Bogotá, grew up between Virginia and Florida, and came up through hardcore bands before turning to hip-hop production and engineering. His co-write “Vi$ions” with Cherele was placed on HBO’s Insecure, and he founded the label XUE Records. These days he builds research tools and the website for Music Nerd.",
-      "backed": "Part of the Music Nerd team, building it with C.Y. and Carl.",
-      "source": "https://musicnerd.net/about",
-      "links": {
-        "Website": "https://peterango.com/",
-        "Instagram": "https://www.instagram.com/p3t3rango/",
-        "Apple Music": "https://music.apple.com/us/artist/pete-rango/1513734272"
-      },
-      "embed": {
-        "type": "youtube",
-        "id": "Vp4MXvyrDv4",
-        "title": "Breakdown, by Elle Symone & Pete Rango"
-      },
-      "image": "artists/pete-rango.webp",
-      "imageAlt": "RUSH cover art: a running black figure"
-    },
-    {
-      "slug": "song-a-day",
-      "name": "Jonathan Mann",
-      "role": "Featuring",
-      "work": "We All Make A Platformer",
-      "discipline": "Songwriter, game maker",
-      "base": null,
-      "bio": "Jonathan Mann has written and recorded a song every day since January 1, 2009, which earned him a Guinness World Record. He also makes games, including WAMP (We All Make A Platformer), where everyone builds a room and then plays everyone else’s. He made this website.",
-      "backed": "One of the roughly thirty artists C.Y. and Carl work with through Music Nerd. C.Y. is also a friend and mentor.",
-      "source": "https://musicnerds.substack.com/p/music-nerd-platform-update-cb9",
-      "links": {
-        "Song A Day": "https://songaday.studio",
-        "WAMP": "https://wamp.land/"
       },
       "embed": null,
       "image": null

@@ -55,7 +55,8 @@ if (bar) {
 const openFromHash = () => {
   if (location.hash.length < 2) return;
   const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
-  if (target?.classList.contains('credit')) target.querySelector('details').open = true;
+  const details = target?.querySelector(':scope > details');
+  if (details) details.open = true;
 };
 addEventListener('hashchange', openFromHash);
 openFromHash();
@@ -112,8 +113,8 @@ if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
   img.alt = '';
   peek.append(img);
   document.body.append(peek);
-  document.querySelectorAll('.credit summary[data-peek]').forEach((summary) => {
-    const name = summary.querySelector('.credit-name');
+  document.querySelectorAll('summary[data-peek]').forEach((summary) => {
+    const name = summary.querySelector('.credit-name, .entry-name');
     name.addEventListener('pointerenter', () => {
       if (summary.parentElement.open) return;
       img.src = summary.dataset.peek;
