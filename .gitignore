@@ -14,6 +14,7 @@ service-account*.json
 
 # Private material (see ASSETS.md "Not included")
 private-assets/
+private-assets*.zip
 data/
 logs/
 
