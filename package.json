@@ -8,6 +8,8 @@
   "scripts": {
     "build": "node build.mjs",
     "dev": "node build.mjs && npx wrangler dev",
-    "deploy": "node build.mjs --require-photos && npx wrangler deploy"
+    "deploy": "node build.mjs --fetch-photos --require-photos && npx wrangler deploy",
+    "photos:pull": "node build.mjs --fetch-photos",
+    "photos:push": "node photos.mjs push"
   }
 }

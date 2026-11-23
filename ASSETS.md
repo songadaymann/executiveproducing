@@ -25,7 +25,7 @@ None.
 
 ## 4. Not ours and not licensed: never in the repo
 
-These live in the ignored `private-assets/` folder. They were downloaded on October 22, 2026, from each artist's own pages and profiles, to show each credit, and remain their owners'. `build.mjs` copies them into the deployed site when they're present. Without them the site builds with no photos.
+These live in the ignored `private-assets/` folder. They were downloaded on October 22, 2026, from each artist's own pages and profiles, to show each credit, and remain their owners'. `build.mjs` copies them into the deployed site when they're present. Without them the site builds with no photos. The shared copy is in a private Cloudflare R2 bucket, which the automatic build reads; `npm run photos:push` and `npm run photos:pull` copy files to and from it (see the README).
 
 | Expected path | What it is | Source | Why it's excluded |
 | --- | --- | --- | --- |

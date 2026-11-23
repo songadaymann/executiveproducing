@@ -1,10 +1,12 @@
 // Renders src/credits.json into a static site in dist/.
 // Photos live in the ignored private-assets/ folder (see ASSETS.md). Without it the
-// site still builds: credits simply show no photo. Pass --require-photos (as
-// `npm run deploy` does) to fail instead, so a photo-less site is never published by accident.
+// site still builds: credits simply show no photo. `npm run deploy` passes two flags:
+// --fetch-photos downloads any missing photo from the private bucket (see photos.mjs), and
+// --require-photos fails if one is still missing, so a photo-less site is never published by accident.
 import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
+import { pullPhoto } from './photos.mjs';
 
 const root = import.meta.dirname;
 const dist = path.join(root, 'dist');
@@ -18,12 +20,22 @@ await rm(dist, { recursive: true, force: true });
 await mkdir(path.join(dist, 'media'), { recursive: true });
 
 const requirePhotos = process.argv.includes('--require-photos');
+const fetchPhotos = process.argv.includes('--fetch-photos');
 const missingPhotos = [];
+let fetchedPhotos = 0;
+let downloads = Promise.resolve();
 
 // Copies a private photo into dist/media and returns its URL, or null when it's missing.
 async function media(file) {
   if (!file) return null;
   const source = path.join(privateAssets, file);
+  if (fetchPhotos && !existsSync(source)) {
+    // One download at a time: the page asks for many photos at once.
+    downloads = downloads.then(async () => {
+      if (!existsSync(source) && await pullPhoto(file)) fetchedPhotos += 1;
+    });
+    await downloads;
+  }
   if (!existsSync(source)) {
     missingPhotos.push(file);
     return null;
@@ -299,14 +311,18 @@ const projectCount = data.projects.reduce((n, { items }) => n + items.length, 0)
 const missingNote = missingPhotos.length
   ? ` (${missingPhotos.length} ${missingPhotos.length === 1 ? 'photo' : 'photos'} missing from private-assets/)`
   : '';
-console.log(`Built dist/ with ${data.credits.length + data.moreCredits.length} credits and ${projectCount} projects${missingNote}.`);
+const fetchedNote = fetchedPhotos
+  ? ` Downloaded ${fetchedPhotos} ${fetchedPhotos === 1 ? 'photo' : 'photos'} from the photo bucket.`
+  : '';
+console.log(`Built dist/ with ${data.credits.length + data.moreCredits.length} credits and ${projectCount} projects${missingNote}.${fetchedNote}`);
 
 if (requirePhotos && missingPhotos.length) {
   console.error(`
-Stopped before deploying. The site uses these photos, and they are not in private-assets/:
+Stopped before deploying. The site uses these photos, and they are not in private-assets/${fetchPhotos ? '\nand could not be downloaded from the photo bucket' : ''}:
 ${missingPhotos.map((file) => `  private-assets/${file}`).join('\n')}
 
 Deploying now would publish the site without them. Photos are kept out of the repo
-(see ASSETS.md), so copy the folder from someone who has it, then run npm run deploy again.`);
+(see ASSETS.md). If a photo is new, put it in private-assets/ and run npm run photos:push.
+Then deploy again.`);
   process.exit(1);
 }

@@ -11,7 +11,7 @@ npm run build      # writes dist/
 npx wrangler dev   # serves dist/ at http://localhost:8787
 ```
 
-No install step and no keys. The build is one Node script (`build.mjs`, Node 20+) with no dependencies.
+No install step and no keys. The build is a Node script (`build.mjs`, Node 20+) with no dependencies.
 
 ## Editing the credits
 
@@ -27,11 +27,22 @@ Then run `npm run build`.
 
 ## How it's built
 
-A Node script renders the JSON into one static HTML page, with a little vanilla JS for the players, the top bar that tracks which section you're in, the photo that follows your pointer, and the "Roll credits" button. Cloudflare Workers static assets serves it (`wrangler.jsonc`), and `npm run deploy` builds and ships it.
+A Node script renders the JSON into one static HTML page, with a little vanilla JS for the players, the top bar that tracks which section you're in, the photo that follows your pointer, and the "Roll credits" button. Cloudflare Workers static assets serves it (`wrangler.jsonc`).
 
-Photos aren't in this repo. They live in the ignored `private-assets/` folder (see [ASSETS.md](ASSETS.md)), and the build copies them in when they're present. Without them the site still builds, just without photos.
+## Publishing
 
-`npm run deploy` is the exception. If any photo the site uses is missing, it stops before publishing and lists the files, so the live site can't lose its photos by accident. Get a copy of `private-assets/` from someone who has it before you deploy.
+Pushing to `main` publishes the site. Cloudflare watches this repo and runs `npm run deploy` on every push to `main`, and the live site updates a minute or two later. If that build fails, the live site stays as it was. To try something without publishing it, work on another branch and merge when it's ready.
+
+## Photos
+
+Photos aren't in this repo (see [ASSETS.md](ASSETS.md)). The shared copy lives in a private Cloudflare R2 bucket, and on your machine they sit in the ignored `private-assets/` folder.
+
+- `npm run build` uses whatever is in `private-assets/`. Without photos the site still builds, just without them.
+- `npm run deploy`, which is what Cloudflare runs, downloads any photo the site uses that isn't there. If one can't be found it stops before publishing and lists the files, so the live site can't lose its photos by accident.
+- To add or replace a photo, put it in `private-assets/`, point to it from `src/credits.json`, and run `npm run photos:push` before you push to `main`.
+- `npm run photos:pull` downloads the photos the site uses onto a new machine.
+
+The two `photos` commands need a Cloudflare login that can reach the bucket (`npx wrangler login`).
 
 ## License
 
