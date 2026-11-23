@@ -1,6 +1,7 @@
 // Renders src/credits.json into a static site in dist/.
 // Photos live in the ignored private-assets/ folder (see ASSETS.md). Without it the
-// site still builds: credits simply show no photo.
+// site still builds: credits simply show no photo. Pass --require-photos (as
+// `npm run deploy` does) to fail instead, so a photo-less site is never published by accident.
 import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
@@ -16,11 +17,17 @@ const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '
 await rm(dist, { recursive: true, force: true });
 await mkdir(path.join(dist, 'media'), { recursive: true });
 
+const requirePhotos = process.argv.includes('--require-photos');
+const missingPhotos = [];
+
 // Copies a private photo into dist/media and returns its URL, or null when it's missing.
 async function media(file) {
   if (!file) return null;
   const source = path.join(privateAssets, file);
-  if (!existsSync(source)) return null;
+  if (!existsSync(source)) {
+    missingPhotos.push(file);
+    return null;
+  }
   const target = path.join(dist, 'media', file);
   await mkdir(path.dirname(target), { recursive: true });
   await cp(source, target);
@@ -289,4 +296,17 @@ await writeFile(path.join(dist, '404.html'), `<!doctype html>
 await writeFile(path.join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
 await writeFile(path.join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${SITE}/</loc></url></urlset>\n`);
 const projectCount = data.projects.reduce((n, { items }) => n + items.length, 0);
-console.log(`Built dist/ with ${data.credits.length + data.moreCredits.length} credits and ${projectCount} projects${portrait ? '' : ' (no private-assets/, so no photos)'}.`);
+const missingNote = missingPhotos.length
+  ? ` (${missingPhotos.length} ${missingPhotos.length === 1 ? 'photo' : 'photos'} missing from private-assets/)`
+  : '';
+console.log(`Built dist/ with ${data.credits.length + data.moreCredits.length} credits and ${projectCount} projects${missingNote}.`);
+
+if (requirePhotos && missingPhotos.length) {
+  console.error(`
+Stopped before deploying. The site uses these photos, and they are not in private-assets/:
+${missingPhotos.map((file) => `  private-assets/${file}`).join('\n')}
+
+Deploying now would publish the site without them. Photos are kept out of the repo
+(see ASSETS.md), so copy the folder from someone who has it, then run npm run deploy again.`);
+  process.exit(1);
+}

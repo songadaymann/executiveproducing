@@ -31,6 +31,8 @@ A Node script renders the JSON into one static HTML page, with a little vanilla 
 
 Photos aren't in this repo. They live in the ignored `private-assets/` folder (see [ASSETS.md](ASSETS.md)), and the build copies them in when they're present. Without them the site still builds, just without photos.
 
+`npm run deploy` is the exception. If any photo the site uses is missing, it stops before publishing and lists the files, so the live site can't lose its photos by accident. Get a copy of `private-assets/` from someone who has it before you deploy.
+
 ## License
 
 Code: [MIT](LICENSE). Text, the share image, and media: see [ASSETS.md](ASSETS.md).
